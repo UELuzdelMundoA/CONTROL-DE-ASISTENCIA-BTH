@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTROL DE ASISTENCIA BTH</title>
-    <script>
-            // Import the functions you need from the SDKs you need
-    import { initializeApp } from "firebase/app";
-    import { getAnalytics } from "firebase/analytics";
+    <link rel="stylesheet" href="styles/estilos.css">
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-    apiKey: "AIzaSyAjGSf1Jbib7CzVSO5jOd4AGWCyris5IUo",
-    authDomain: "control-de-asistencia-bth.firebaseapp.com",
-    projectId: "control-de-asistencia-bth",
-    storageBucket: "control-de-asistencia-bth.firebasestorage.app",
-    messagingSenderId: "578896216625",
-    appId: "1:578896216625:web:8d5bdd7d0837faa6514b10",
-    measurementId: "G-LCZ0Y8VQW5"
+        apiKey: "AIzaSyAjGSf1Jbib7CzVSO5jOd4AGWCyris5IUo",
+        authDomain: "control-de-asistencia-bth.firebaseapp.com",
+        projectId: "control-de-asistencia-bth",
+        storageBucket: "control-de-asistencia-bth.firebasestorage.app",
+        messagingSenderId: "578896216625",
+        appId: "1:578896216625:web:8d5bdd7d0837faa6514b10",
+        measurementId: "G-LCZ0Y8VQW5"
     };
 
     // Initialize Firebase
@@ -29,6 +30,22 @@
     </script>
 </head>
 <body>
-    
+    <header class="header">
+        <h1 class="titulo">Control de Asistencia</h1>
+        <h2 class="subtitulo">U.E LUZ DEL MUNDO "A"</h2>
+        <button class="boton" onclick="">MODO ADMINISTRADOR</button>
+    </header>
+    <main id="principal">
+        <div class="grid" id="carreras">
+            <div class="tarjeta-sistemas">Sistemas Informáticos</div>
+            <div class="tarjeta-Electronica">Electronica</div>
+            <div class="tarjeta-Contabilidad">Contabilidad</div>
+            <div class="tarjeta-Transformacion">Transformacion de Alimentos</div>
+        </div>
+        <div class="contenido">
+            //se rellenara dinamicamente
+        </div>
+    </main>
+    <script src="js/codigo.js"></script>
 </body>
 </html>
