@@ -105,21 +105,21 @@ h2 {
     border: solid black 2px;
 }
 
-.tarjeta.electronica {
+.tarjeta.Electronica {
     margin-top: 20px;
     background-color: var(--color-electronica);
     color: white;
     border: solid black 2px;
 }
 
-.tarjeta.alimentos {
+.tarjeta.Transformacion {
     margin-top: 20px;
     background-color: var(--color-alimentos);
     color: black;
     border: solid black 2px;
 }
 
-.tarjeta.contaduria {
+.tarjeta.Contabilidad {
     margin-top: 20px;
     background-color: var(--color-contaduria);
     color: white;
@@ -159,4 +159,34 @@ h2 {
 
 .boton:hover {
     background-color: var(--color-boton-hover);
+}
+
+/*TABLA DE CARRERAS*/
+#tabla {
+    width: 100%;
+    border-collapse: collapse;
+    /* Quita espacio entre bordes */
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--sombra-tarjeta);
+    display: block;
+    overflow-x: auto;
+    /* Permite scroll horizontal en pantallas pequeñas */
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    /* Bordes grises suaves */
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: #e9ecef;
+    /* Fondo gris claro para los encabezados */
+    font-weight: bold;
 }
