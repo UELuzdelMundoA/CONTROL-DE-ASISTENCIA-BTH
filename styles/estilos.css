@@ -1,0 +1,162 @@
+:root {
+    --color-sistemas: #f3e3a9df;
+    --color-electronica: #1c51ac;
+    --color-alimentos: #eeeae5;
+    --color-contabilidad: #3a27a5;
+    --color-fondo: #f4f6f8;
+    /* Fondo general de la página */
+    --color-encabezado: #162960;
+    /* Color de fondo del encabezado */
+    --color-boton: #007bff;
+    /* Color base de los botones */
+    --color-boton-hover: #0056b3;
+    /* Color del botón al pasar el mouse */
+    --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para tarjetas */
+}
+/* ESTILO GLOBAL DE BODY        */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fuente moderna y legible */
+    margin: 0;
+    /* Elimina margen por defecto */
+    padding: 0;
+    /* Elimina relleno por defecto */
+    background: var(--color-fondo);
+    /* Color de fondo definido con variable */
+    color: #333;
+    /* Color del texto general */
+}
+.header {
+    background-color: var(--color-encabezado);
+    /* Fondo oscuro */
+    color: rgb(255, 217, 0);
+    /* Texto en blanco */
+    padding: 1.2rem;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centrado del texto */
+    font-size: 1.5rem;
+    /* Tamaño de fuente grande */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+}
+h1,
+h3 {
+    text-align: center;
+    /* Centrado de texto */
+    margin-bottom: 0.5rem;
+    /* Espacio inferior */
+}
+h2 {
+    text-align: center;
+    /* Centrado de texto */
+    margin-bottom: 0.2rem;
+    /* Espacio inferior */
+    font-size: 2rem;
+    /* Tamaño de fuente */
+}
+
+#principal {
+    padding: 1rem 2%;
+    /* Relleno superior/inferior 1rem, laterales 2% */
+}
+/* CUADRÍCULA DE CARRERAS        */
+.grid {
+    display: grid;
+    /* Usa sistema de cuadrícula */
+    gap: 1.5rem;
+    /* Espacio entre columnas/filas */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* Crea tantas columnas como entren, con un mínimo de 220px cada una */
+}
+
+/* TARJETAS DE CARRERAS        */
+.tarjeta {
+    background-color: white;
+    /* Fondo blanco */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    padding: 1.2rem;
+    /* Relleno interno */
+    box-shadow: var(--sombra-tarjeta);
+    /* Sombra ligera */
+    text-align: center;
+    /* Centrado del texto */
+    cursor: pointer;
+    /* Aparece mano al pasar mouse */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* Animación al hacer hover */
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    /* Mueve la tarjeta ligeramente hacia arriba */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    /* Sombra más intensa */
+}
+
+.tarjeta.sistemas {
+    margin-top: 20px;
+    background-color: var(--color-sistemas);
+    color: black;
+    border: solid black 2px;
+}
+
+.tarjeta.electronica {
+    margin-top: 20px;
+    background-color: var(--color-electronica);
+    color: white;
+    border: solid black 2px;
+}
+
+.tarjeta.alimentos {
+    margin-top: 20px;
+    background-color: var(--color-alimentos);
+    color: black;
+    border: solid black 2px;
+}
+
+.tarjeta.contaduria {
+    margin-top: 20px;
+    background-color: var(--color-contaduria);
+    color: white;
+    border: solid black 2px;
+}
+
+.header {
+    text-align: center;
+    background-color: var(--color-encabezado);
+    /* Color ya definido arriba, pero aquí se repite */
+}
+
+.titulo {
+    color: rgb(255, 217, 0);
+    text-transform: uppercase;
+    /* Convierte el texto a mayúsculas */
+}
+
+/* BOTONES */
+.boton {
+    padding: 0.6rem 1.2rem;
+    /* Relleno interno */
+    background-color: rgba(65, 65, 18, 0.906);
+    /* Color de fondo */
+    color: white;
+    border: none;
+    /* Sin borde */
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0.75rem 0;
+    /* Espacio vertical entre botones */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    /* Transición suave al hacer hover */
+}
+
+.boton:hover {
+    background-color: var(--color-boton-hover);
+}
