@@ -50,10 +50,10 @@ body {
 }
 
 .header-top img {
-    max-width: 100px;
+    max-width: 150px;
     height: auto;
     display: block;
-    border: 3px solid var(--color-encabezado-titulo);
+    border: 2px solid var(--color-encabezado-titulo);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -275,7 +275,7 @@ tbody tr:hover {
         gap: 0.8rem;
     }
     .header-top img {
-        width: 60px; /* Imágenes más pequeñas en móvil */
+        width: 75px; /* Imágenes más pequeñas en móvil */
         max-width: 60px;
         border: 2px solid var(--color-encabezado-titulo);
     }
