@@ -154,12 +154,12 @@ async function mostrarTablaAsistencia(carrera, anio, trimestre) {
                     <option value=""></option>
                     <option value="✓" ${marca === '✓' ? 'selected' : ''}>✓</option>
                     <option value="X" ${marca === 'X' ? 'selected' : ''}>X</option>
-                    <option value="R" ${marca === 'R' ? 'selected' : ''}>✓</option>
-                    <option value="L" ${marca === 'L' ? 'selected' : ''}>X</option>
+                    <option value="R" ${marca === 'R' ? 'selected' : ''}>R</option>
+                    <option value="L" ${marca === 'L' ? 'selected' : ''}>L</option>
                 </select></td>`;
             } else {
                 // En usuario, solo mostrar la marca con color según tipo
-                contenidoFila += `<td class="${marca === '✓' ? 'verde' : marca === 'X' ? 'naranja' : marca === 'R' ? 'verde' : marca === 'F' ? 'morado' : ''}">${marca}</td>`;
+                contenidoFila += `<td class="${marca === '✓' ? 'verde' : marca === 'X' ? 'rojo' : marca === 'R' ? 'naranja' : marca === 'L' ? 'morado' : ''}">${marca}</td>`;
             }
         });
 

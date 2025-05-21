@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTROL DE ASISTENCIA BTH</title>
+    <title>CONTROL DE ASISTENCIA BTH - App</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/estilos.css">
-    <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
+</head>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script>
+            // Configuración de Firebase
+        const firebaseConfig = {
         apiKey: "AIzaSyAjGSf1Jbib7CzVSO5jOd4AGWCyris5IUo",
         authDomain: "control-de-asistencia-bth.firebaseapp.com",
         projectId: "control-de-asistencia-bth",
         storageBucket: "control-de-asistencia-bth.firebasestorage.app",
         messagingSenderId: "578896216625",
-        appId: "1:578896216625:web:8d5bdd7d0837faa6514b10",
-        measurementId: "G-LCZ0Y8VQW5"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+        appId: "1:578896216625:web:1d3c9afe7166ee0f514b10",
+        measurementId: "G-CCRRDF2W7K"
+        };
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        window.db = db;
+        /*
+        Obtiene una referencia a la base de datos Firestore.
+        Asigna la referencia `db` al objeto global `window` para que sea accesible desde otros scripts,
+        */
     </script>
-</head>
 <body>
     <header class="header">
-        <h1 class="titulo">Control de Asistencia</h1>
-        <h2 class="subtitulo">U.E LUZ DEL MUNDO "A"</h2>
+        <div class="header-top">
+            <img src="images/logo.jpg" alt="Logo U.E. Luz del Mundo A" width="100">
+            <div class="header-contenido">
+                <h1 class="titulo">Control de Asistencia</h1>
+                <h2 class="subtitulo">U.E LUZ DEL MUNDO "A"</h2>
+            </div>
+            <img src="images/escudo.png" alt="Escudo" width="100">
+        </div>
         <button class="boton" onclick="activarModoAdministrador()">MODO ADMINISTRADOR</button>
     </header>
     <main id="principal">
         <div class="grid" id="carreras">
             <div class="tarjeta sistemas" onclick="mostrarAnios('Sistemas Informáticos')">Sistemas Informáticos</div>
             <div class="tarjeta Electronica" onclick="mostrarAnios('Electronica')">Electronica</div>
-            <div class="tarjeta Contabilidad" onclick="mostrarAnios('>Contabilidad')" >Contabilidad</div>
-            <div class="tarjeta Transformacion" onclick="mostrarAnios('Transfomacion de Alimentos')">Transformacion de Alimentos</div>
+            <div class="tarjeta Contabilidad" onclick="mostrarAnios('Contabilidad')">Contabilidad</div>
+            <div class="tarjeta Transformacion" onclick="mostrarAnios('Transfomacion de Alimentos')">Transformacion de
+                Alimentos</div>
         </div>
-        <div class="contenido">
-            <!-- se rellenara dinamicamente -->
-        </div>
+        <div id="contenido">
+            </div>
     </main>
     <script src="js/codigo.js"></script>
 </body>
+
 </html>
