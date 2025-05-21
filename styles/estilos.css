@@ -5,33 +5,31 @@
     --color-contabilidad: #3a27a5;
     --color-fondo: #f4f6f8;
     /* Fondo general de la página */
-    --color-encabezado: #28a745; /* Changed: A pleasant green for the header background */
-    --color-encabezado-texto: #ffffff; /* New: White text for better contrast */
-    --color-boton: #007bff;
-    /* Color base de los botones */
-    --color-boton-hover: #0056b3;
-    /* Color del botón al pasar el mouse */
-    --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Sombra suave para tarjetas */
+    --color-encabezado: #1c51ac; /* Un azul profundo para el encabezado */
+    --color-encabezado-texto: #ffffff; /* Texto blanco para el contraste */
+    --color-encabezado-titulo: #ffcc00; /* Amarillo brillante para el título */
+    --color-boton-principal: #ffcc00; /* Amarillo para los botones principales (como "MODO ADMINISTRADOR") */
+    --color-boton-principal-hover: #e0b000; /* Amarillo más oscuro al pasar el mouse */
+    --color-boton-secundario: #007bff; /* Azul para botones secundarios (años, trimestres) */
+    --color-boton-secundario-hover: #0056b3; /* Azul más oscuro al pasar el mouse */
+    --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para tarjetas */
+    --color-borde-tabla: #dee2e6; /* Color de borde para la tabla */
+    --color-fondo-fila-par: #f8f9fa; /* Fondo para filas pares de la tabla */
 }
 
 /* ESTILO GLOBAL DE BODY         */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fuente moderna y legible */
     margin: 0;
-    /* Elimina margen por defecto */
     padding: 0;
-    /* Elimina relleno por defecto */
     background: var(--color-fondo);
-    /* Color de fondo definido con variable */
     color: #333;
-    /* Color del texto general */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
 }
 
 .header {
     background-color: var(--color-encabezado);
-    color: var(--color-encabezado-texto); /* Changed: Use new variable for header text color */
+    color: var(--color-encabezado-texto);
     padding: 1.2rem;
     text-align: center;
     font-size: 1.5rem;
@@ -40,7 +38,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added: A subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header-top {
@@ -48,15 +46,17 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 1.5rem; /* Increased gap for better spacing */
+    gap: 1.5rem;
 }
 
 .header-top img {
-    max-width: 100px; /* Ensured images don't exceed a reasonable max width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Removes extra space below images */
+    max-width: 100px;
+    height: auto;
+    display: block;
+    border: 3px solid var(--color-encabezado-titulo);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 
 .header-contenido {
     text-align: center;
@@ -64,15 +64,18 @@ body {
 }
 
 .titulo {
-    color: #ffcc00; /* Changed: A bright yellow that stands out against green */
+    color: var(--color-encabezado-titulo);
     text-transform: uppercase;
-    margin: 0; /* Remove default margin to prevent extra space */
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700; /* Texto más audaz */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Ligera sombra para el texto */
 }
 
 .subtitulo {
-    color: var(--color-encabezado-texto); /* Keep subtitle text color consistent */
-    margin: 0; /* Remove default margin */
-    font-size: 1.2rem; /* Adjusted font size for subtitle */
+    color: var(--color-encabezado-texto);
+    margin: 0;
+    font-size: 1.3rem;
 }
 
 h1,
@@ -87,13 +90,14 @@ h2 {
 }
 
 #principal {
-    padding: 1rem 2%;
+    padding: 1.5rem 2%; /* Más padding para el contenido principal */
 }
 /* CUADRÍCULA DE CARRERAS         */
 .grid {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-bottom: 2rem; /* Espacio debajo de la cuadrícula de carreras */
 }
 
 /* TARJETAS DE CARRERAS         */
@@ -143,113 +147,173 @@ h2 {
 }
 
 
-/* BOTONES */
+/* BOTONES GENERALES */
 .boton {
-    padding: 0.6rem 1.2rem;
-    background-color: #007bff; /* Changed: Using a more standard blue for the button */
-    color: white;
+    padding: 0.8rem 1.6rem; /* Más padding para botones */
+    background-color: var(--color-boton-principal); /* Color principal del botón */
+    color: var(--color-encabezado); /* Texto del color del encabezado */
     border: none;
-    border-radius: 6px;
+    border-radius: 8px; /* Bordes más redondeados */
     cursor: pointer;
-    margin: 0.75rem 0;
+    margin: 0.75rem 0.5rem; /* Margen para separación */
     font-weight: bold;
-    font-size: 1rem;
-    transition: background-color 0.2s ease;
+    font-size: 1.1rem; /* Fuente un poco más grande */
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Transición suave */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para los botones */
+    min-width: 150px; /* Ancho mínimo para consistencia */
+    text-transform: uppercase; /* Texto en mayúsculas */
 }
 
 .boton:hover {
-    background-color: var(--color-boton-hover);
+    background-color: var(--color-boton-principal-hover);
+    transform: translateY(-2px); /* Ligero levantamiento al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* ESTILOS ESPECÍFICOS PARA LOS BOTONES DE AÑO Y TRIMESTRE */
+.boton-anio, .boton-trimestre {
+    background-color: var(--color-boton-secundario); /* Usamos el azul secundario */
+    color: white;
+    padding: 0.7rem 1.4rem; /* Padding ajustado */
+    font-size: 1rem;
+    margin: 0.5rem 0.4rem; /* Margen más compacto */
+    min-width: 100px; /* Ancho mínimo para estos botones */
+}
+
+.boton-anio:hover, .boton-trimestre:hover {
+    background-color: var(--color-boton-secundario-hover);
+}
+
+/* CONTENEDOR DE BOTONES (si lo usas para agrupar años/trimestres) */
+.contenedor-botones {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones salten de línea en pantallas pequeñas */
+    justify-content: center;
+    gap: 1rem; /* Espacio entre los botones */
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background-color: #ffffff; /* Fondo suave para agrupar los botones */
+    border-radius: 10px;
+    box-shadow: var(--sombra-tarjeta);
+}
+
 
 /*TABLA DE CARRERAS*/
 #tabla {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin-top: 1.5rem; /* Más espacio arriba */
     background-color: white;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: hidden; /* Asegura que los bordes redondeados funcionen bien */
     box-shadow: var(--sombra-tarjeta);
     display: block;
-    overflow-x: auto;
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    border: 1px solid var(--color-borde-tabla); /* Borde suave alrededor de toda la tabla */
 }
 
 th,
 td {
-    border: 1px solid #ddd;
-    padding: 0.6rem;
+    border: 1px solid var(--color-borde-tabla); /* Bordes más definidos y suaves */
+    padding: 0.8rem 0.6rem; /* Más padding para celdas */
     text-align: center;
     font-size: 0.95rem;
+    vertical-align: middle; /* Alineación vertical para celdas */
 }
 
 th {
-    background-color: #e9ecef;
+    background-color: #e9ecef; /* Fondo gris claro para los encabezados */
     font-weight: bold;
+    color: #495057; /* Color de texto más oscuro para los encabezados */
+    text-transform: uppercase; /* Encabezados en mayúsculas */
+    padding: 1rem 0.6rem; /* Más padding para encabezados */
+    border-bottom: 2px solid var(--color-encabezado); /* Borde inferior más pronunciado */
 }
+
+/* Estilo para filas impares */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Estilo para filas pares (alternando colores) */
+tbody tr:nth-child(even) {
+    background-color: var(--color-fondo-fila-par); /* Color suave para filas pares */
+}
+
+/* Efecto hover en filas */
+tbody tr:hover {
+    background-color: #e2e6ea; /* Cambio de color al pasar el mouse por la fila */
+    cursor: pointer;
+}
+
+
 /* COLORES DE OPCIONES*/
 .verde {
-    color: green;
+    color: #28a745; /* Verde más estándar */
     font-weight: bold;
 }
 
 .rojo {
-    color: red;
+    color: #dc3545; /* Rojo más estándar */
     font-weight: bold;
 }
 .naranja {
-    color: orangered;
+    color: #fd7e14; /* Naranja más estándar */
     font-weight: bold;
 }
 
 .morado {
-    color: purple;
+    color: #6f42c1; /* Morado más estándar */
     font-weight: bold;
 }
 
 /* DISEÑO RESPONSIVO PARA CELULARES */
-@media (max-width: 600px) {
-    tabla,
-    th,
-    td {
-        font-size: 12px;
-    }
-    .tarjeta {
-        font-size: 1rem;
-        padding: 1rem;
-    }
-    .boton {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-    }
+@media (max-width: 768px) { /* Aumentado el breakpoint para mejor adaptabilidad */
     .header-top {
-        flex-direction: column; /* Stack images and text vertically on small screens */
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.8rem;
     }
     .header-top img {
-        width: 80px; /* Adjust image size for smaller screens */
-        max-width: 80px; /* Ensure it doesn't get bigger */
+        width: 60px; /* Imágenes más pequeñas en móvil */
+        max-width: 60px;
+        border: 2px solid var(--color-encabezado-titulo);
     }
     .titulo {
-        font-size: 1.8rem; /* Adjust title font size for smaller screens */
+        font-size: 1.8rem; /* Ajuste para el título */
     }
     .subtitulo {
-        font-size: 1rem; /* Adjust subtitle font size for smaller screens */
+        font-size: 1.1rem; /* Ajuste para el subtítulo */
     }
-}
-/* ANCHO MÍNIMO PARA NOMBRES         */
-th:nth-child(2),
-td:nth-child(2) {
-    min-width: 200px;
-    text-align: left;
-    white-space: nowrap;
-}
-/* LIMITAR ANCHO DE COLUMNAS DE FECHAS */
-
-th:not(:nth-child(1)):not(:nth-child(2)),
-td:not(:nth-child(1)):not(:nth-child(2)) {
-    min-width: 60px;
-    max-width: 60px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    .boton {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+        min-width: unset; /* Quitar ancho mínimo en móvil */
+        width: 100%; /* Que ocupe todo el ancho disponible */
+        margin: 0.5rem 0; /* Margen vertical */
+    }
+    .boton-anio, .boton-trimestre {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        min-width: unset;
+        width: auto; /* Permite que el ancho se ajuste al contenido */
+        margin: 0.3rem; /* Margen compacto */
+    }
+    th, td {
+        font-size: 0.85rem; /* Texto de tabla más pequeño en móvil */
+        padding: 0.5rem;
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+        min-width: 120px; /* Nombre más compacto en móvil */
+    }
+    th:not(:nth-child(1)):not(:nth-child(2)),
+    td:not(:nth-child(1)):not(:nth-child(2)) {
+        min-width: 45px; /* Fechas más compactas */
+        max-width: 45px;
+    }
+    .grid {
+        gap: 1rem; /* Menos espacio entre tarjetas en móvil */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tarjetas más pequeñas */
+    }
 }
