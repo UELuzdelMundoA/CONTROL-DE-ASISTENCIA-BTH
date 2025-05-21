@@ -291,6 +291,7 @@ tbody tr:hover {
         min-width: unset; /* Quitar ancho mínimo en móvil */
         width: 100%; /* Que ocupe todo el ancho disponible */
         margin: 0.5rem 0; /* Margen vertical */
+        text-align: center ; /* Centrar texto */
     }
     .boton-anio, .boton-trimestre {
         padding: 0.5rem 1rem;
@@ -300,8 +301,12 @@ tbody tr:hover {
         margin: 0.3rem; /* Margen compacto */
     }
     th, td {
-        font-size: 0.85rem; /* Texto de tabla más pequeño en móvil */
-        padding: 0.5rem;
+        font-size: 0.75rem; /* Texto de tabla más pequeño en móvil */
+        padding: 0.3rem;
+        white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+        overflow: hidden; /* Ocultar el desbordamiento */
+        word-break: break-all; /* Permitir que el texto largo se rompa */
+        text-overflow: ellipsis; /* Agregar puntos suspensivos al final */
     }
     th:nth-child(2),
     td:nth-child(2) {
@@ -311,6 +316,12 @@ tbody tr:hover {
     td:not(:nth-child(1)):not(:nth-child(2)) {
         min-width: 45px; /* Fechas más compactas */
         max-width: 45px;
+    }
+    #tabla {
+        display: block; /* Hacer la tabla desplazable */
+        overflow-x: auto; /* Permitir desplazamiento horizontal */
+        width: 100%; /* Asegurar que ocupe todo el ancho */
+        -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
     }
     .grid {
         gap: 1rem; /* Menos espacio entre tarjetas en móvil */
